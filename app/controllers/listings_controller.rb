@@ -1,0 +1,21 @@
+class MakersBnb < Sinatra::Base
+
+	get '/listings/new' do
+		erb :'listings/new'
+	end
+
+	post '/listings/add' do
+		@listing = Listing.create(name: params[:name],
+								description: params[:description],
+								price: params[:price],
+								available_from: params[:available_from],
+								available_until: params[:available_until])
+		redirect '/listings'
+	end
+
+	get '/listings' do
+		@listings = Listing.all
+		erb :'listings/index'
+	end
+
+end
