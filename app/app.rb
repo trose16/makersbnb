@@ -6,3 +6,4 @@ require_relative 'server'
 require_relative 'helpers'
 
 # require controllers here
+require_relative 'controllers/listings_controller.rb'
