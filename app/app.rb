@@ -5,5 +5,6 @@ require_relative 'data_mapper_setup'
 require_relative 'server'
 require_relative 'helpers'
 
-# require controllers here
+require_relative './controllers/users'
 require_relative 'controllers/listings_controller.rb'
+
