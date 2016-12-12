@@ -23,4 +23,9 @@ feature "Sign up" do
     expect{no_email_sign_up}.to change{User.count}.by(0)
   end
 
+  scenario "User email must be unique" do
+    sign_up
+    expect{sign_up}.to change{User.count}.by(0)
+  end
+
 end
