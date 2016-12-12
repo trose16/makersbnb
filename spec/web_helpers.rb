@@ -42,3 +42,17 @@ def no_password_sign_up
   fill_in "password_confirm", with: ""
   click_button "submit"
 end
+
+def correct_log_in
+  visit '/sessions/new'
+  fill_in "email", with:  'jane@email.com'
+  fill_in "password", with: 'abcd1234'
+  click_button 'log-in'
+end
+
+def incorrect_log_in
+  visit '/sessions/new'
+  fill_in "email", with:  'jane@email.com'
+  fill_in "password", with: 'abcd4'
+  click_button 'log-in'
+end
