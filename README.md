@@ -3,8 +3,6 @@
 
 [![Stories in Ready](https://badge.waffle.io/kwilson541/makersbnb.png?label=ready&title=Ready)](http://waffle.io/kwilson541/makersbnb)
 
-Hello! Simon woz ere!
-
 User Stories
 ------------
 
