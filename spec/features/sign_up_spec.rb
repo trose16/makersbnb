@@ -5,7 +5,7 @@ feature "Sign up" do
 
   scenario "User can enter their details and account is added to database" do
     sign_up
-    expect{sign_up}.to change(User.count).by(1)
+    expect{sign_up}.to change{User.count}.by(1)
   end
 
 end
