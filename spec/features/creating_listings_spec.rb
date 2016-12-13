@@ -11,8 +11,8 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 
 	scenario 'user should be able to fill in a form' do
 		create_listing
+		visit("/listings")
 		expect(page.status_code).to eq 200
-		expect(page).to have_current_path('/listings')
 		expect(page).to have_content("Peacock Paradise Private Villa")
 	end
 

@@ -12,7 +12,7 @@ class MakersBnb < Sinatra::Base
 								country: params[:country],
 								available_from: params[:available_from],
 								available_until: params[:available_until])
-		redirect '/listings'
+		redirect '/users/listings'
 	end
 
 	get '/listings' do
