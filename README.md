@@ -2,6 +2,12 @@
 
 [![Stories in Ready](https://badge.waffle.io/kwilson541/makersbnb.png?label=ready&title=Ready)](http://waffle.io/kwilson541/makersbnb)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> 6126ebb8d4a0fc3427f44e1c0727d247b294302b
 ```
                  :              _   _
                   :               `v'
@@ -38,7 +44,9 @@
                            \)
 
 ```
+>>>>>>> 7842dbe6874a431e5d6d6c0d6f49a7b2a8bd5ba0
 
+>>>>>>> 383503d1cd1e68834c4304c5ac120790a0efe237
 User Stories
 ------------
 
