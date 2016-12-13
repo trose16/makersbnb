@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 module Webhelpers
+=======
+module WebHelpers
+>>>>>>> 8e53a2c2bdb5598f3ecddc23c5a8cabc532f3882
 
 def sign_up
   visit "/users/new"
@@ -74,4 +78,8 @@ def incorrect_log_in
   click_button 'log-in'
 end
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 8e53a2c2bdb5598f3ecddc23c5a8cabc532f3882

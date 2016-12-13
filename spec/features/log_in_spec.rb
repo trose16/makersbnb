@@ -1,10 +1,8 @@
-require_relative "../web_helpers.rb"
+require 'spec_helper'
 
+RSpec.feature 'Log in', :type => :feature do
 
-
-feature 'Log in' do
-
-	include WebHelpers
+include WebHelpers
 
   scenario 'Logging in with correct creds takes you to listings page' do
     sign_up
