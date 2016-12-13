@@ -3,7 +3,7 @@
 class MakersBnb < Sinatra::Base
 
   get "/users/new" do
-    erb :sign_up
+    erb :'users/sign_up'
   end
 
   post "/users" do
