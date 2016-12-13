@@ -11,5 +11,7 @@ class Listing
 	property :price, String
 	property :available_from, String
 	property :available_until, String
+	property :country, String
+	property :city, String
 
 end

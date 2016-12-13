@@ -9,6 +9,9 @@ RSpec.feature 'Viewing a individial listing', :type => :feature do
     click_link "Peacock Paradise Private Villa"
     expect(page.status_code).to eq 200
     expect(page).to have_content("My home has peacocks and a pool.")
+    expect(page).to have_content("50")
+    expect(page).to have_content("London")
+    expect(page).to have_content("United Kingdom")
   end
 
 end
