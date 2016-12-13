@@ -8,6 +8,8 @@ class MakersBnb < Sinatra::Base
 		@listing = Listing.create(name: params[:name],
 								description: params[:description],
 								price: params[:price],
+								city: params[:city],
+								country: params[:country],
 								available_from: params[:available_from],
 								available_until: params[:available_until])
 		redirect '/listings'
