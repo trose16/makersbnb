@@ -15,4 +15,8 @@ class MakersBnb < Sinatra::Base
 
   end
 
+  get "/users/listings" do
+    'Peacock Paradise Private Villa'
+  end
+
 end
