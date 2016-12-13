@@ -1,6 +1,11 @@
 require_relative "../web_helpers.rb"
 
+
+
 feature 'Log in' do
+
+	include WebHelpers
+
   scenario 'Logging in with correct creds takes you to listings page' do
     sign_up
     correct_log_in

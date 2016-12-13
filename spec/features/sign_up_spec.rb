@@ -3,6 +3,9 @@ require_relative "../spec_helper.rb"
 
 feature "Sign up" do
 
+	include WebHelpers
+
+
   scenario "User can enter their details and account is added to database" do
     expect{sign_up}.to change{User.count}.by(1)
   end
