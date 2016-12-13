@@ -18,4 +18,9 @@ class MakersBnb < Sinatra::Base
 		erb :'listings/index'
 	end
 
+	get '/listings/:id' do
+		@listing = Listing.first( id: params[:id] )
+		erb :'listings/detail'
+	end
+
 end
