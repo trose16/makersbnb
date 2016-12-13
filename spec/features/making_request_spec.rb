@@ -8,12 +8,9 @@ include WebHelpers
     sign_up
     create_listing
     click_link('Peacock Paradise Private Villa')
-    expect(page).to have_selector(:link_or_button, 'Request')
-    click_button "Request"
-    expect(current_path).to eq "/request/new"
-    expect(page).to have_selector(:link_or_button,'Send Request')
-    expect(page).to have_content("Peacock Paradise Private Villa")
-    expect(page).to have_content( "My home has peacocks and a pool.")
+    expect(page).to have_selector(:link_or_button, 'Send Request')
+    click_button 'Send Request'
+    expect(current_path).to eq "/users/requests"
   end
 
 end
