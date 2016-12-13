@@ -13,4 +13,8 @@ include WebHelpers
     expect(current_path).to eq "/users/requests"
   end
 
+  scenario "Saves requests to the database" do
+    expect{make_request}.to change{Request.count}.by(1)
+  end
+
 end

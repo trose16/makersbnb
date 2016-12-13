@@ -90,4 +90,12 @@ def incorrect_log_in
   click_button 'log-in'
 end
 
+def make_request
+  sign_up
+  create_listing
+  click_link('Peacock Paradise Private Villa')
+  expect(page).to have_selector(:link_or_button, 'Send Request')
+  click_button 'Send Request'
+end
+
 end
