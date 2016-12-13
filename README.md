@@ -2,12 +2,7 @@
 
 [![Stories in Ready](https://badge.waffle.io/kwilson541/makersbnb.png?label=ready&title=Ready)](http://waffle.io/kwilson541/makersbnb)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 
->>>>>>> 6126ebb8d4a0fc3427f44e1c0727d247b294302b
 ```
                  :              _   _
                   :               `v'
@@ -80,6 +75,7 @@ As a property-owner,
 So that I can select who can rent my property,
 I want to be able to approve requests.
 ```
+
 ```
 As a property-owner,
 So that I don’t get double booked,
