@@ -1,3 +1,5 @@
+module WebHelpers
+
 def sign_up
   visit "/users/new"
   fill_in "name", with: "Jane"
@@ -74,4 +76,6 @@ def incorrect_log_in
   fill_in "email", with:  'jane@email.com'
   fill_in "password", with: 'abcd4'
   click_button 'log-in'
+end
+
 end
