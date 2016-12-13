@@ -1,5 +1,3 @@
-
-
 class MakersBnb < Sinatra::Base
 
   get '/sessions/new' do
