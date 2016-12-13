@@ -14,6 +14,11 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 		expect(page.status_code).to eq 200
 		expect(page).to have_current_path('/listings')
 		expect(page).to have_content("Peacock Paradise Private Villa")
+		expect{create_listing}.to change{Listing.count}.by(1)
+	end
+
+	scenario 'user should not be able to submit incomplete listing' do
+		expect{create_incomplete_listing}.not_to change{Listing.count}
 	end
 
 end

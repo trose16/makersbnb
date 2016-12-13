@@ -6,19 +6,19 @@
 
 	<form action="/listings/add" method="post">
 		Property Name:
-		<input type="text" name="name">
+		<input type="text" name="name" required>
 		Description:
-		<input type="text" name="description">
+		<input type="text" name="description" required>
 		Price per Night:
-		<input type="text" name="price">
+		<input type="text" name="price" required>
 		Available from:
 		<input type="text" name="available_from" placeholder="DD/MM/YYYY">
 		Available until:
 		<input type="text" name="available_until" placeholder="DD/MM/YYYY">
 		City Location:
-		<input type="text" name="city">
+		<input type="text" name="city" required>
 		Country:
-		<input type="text" name="country">
+		<input type="text" name="country" required>
 		<input type="submit" value="List my Property">
 	</form>
 </body>
