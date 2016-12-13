@@ -39,11 +39,7 @@
                            \)
 
 ```
->>>>>>> 7842dbe6874a431e5d6d6c0d6f49a7b2a8bd5ba0
 
->>>>>>> 383503d1cd1e68834c4304c5ac120790a0efe237
-User Stories
-------------
 
 ```
 As a user,
