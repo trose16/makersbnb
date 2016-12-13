@@ -7,12 +7,17 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/sessions' do
-    user = User.authenticate(params[:email], params[:password])
-    if user
+    if @user = User.authenticate(params[:email], params[:password])
+      session[:user_id] = @user.id
       redirect '/listings'
     else
       redirect '/sessions/new'
     end
+  end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    redirect '/listings'
   end
 
 end
