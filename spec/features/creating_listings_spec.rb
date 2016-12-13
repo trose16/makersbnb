@@ -16,4 +16,8 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 		expect(page).to have_content("Peacock Paradise Private Villa")
 	end
 
+	scenario 'user should not be able to submit incomplete listing' do
+		expect{create_incomplete_listing}.not to_change{Listing.count}
+	end
+
 end
