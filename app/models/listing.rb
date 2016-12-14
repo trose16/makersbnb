@@ -14,4 +14,6 @@ class Listing
 	property :country, String, required: true
 	property :city, String, required: true
 
+	has n, :requests, :through => Resource
+
 end

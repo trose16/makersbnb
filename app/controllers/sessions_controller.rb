@@ -1,12 +1,19 @@
 class MakersBnb < Sinatra::Base
 
   get '/sessions/new' do
-    erb :'sessions/log_in'
+
+    if current_user
+      redirect "/listings"
+    else
+      erb :'sessions/log_in'
+    end
+
   end
 
   post '/sessions' do
-    if @user = User.authenticate(params[:email], params[:password])
-      session[:user_id] = @user.id
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
       redirect '/listings'
     else
       redirect '/sessions/new'
@@ -14,7 +21,7 @@ class MakersBnb < Sinatra::Base
   end
 
   delete '/sessions' do
-    session[:user_id] = nil
+    session[:user_id]  = nil
     redirect '/listings'
   end
 

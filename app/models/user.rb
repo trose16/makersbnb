@@ -9,6 +9,8 @@ property :name, String
 property :email, String, :unique => true
 property :password_digest, Text, :required => true
 
+has n, :requests, :through => Resource
+
 attr_accessor :password_confirmation
 attr_reader :password
 

@@ -71,7 +71,6 @@ def make_request
   sign_up_renter
   log_in_renter
   click_link('Peacock Paradise Private Villa')
-  expect(page).to have_selector(:link_or_button, 'Request')
   click_button 'Request'
 end
 
