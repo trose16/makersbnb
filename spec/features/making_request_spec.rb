@@ -32,7 +32,7 @@ include WebHelpers
 
     scenario "Saves requests to the database" do
       pending "adding to databse"
-      expect{make_request}.to change{Request.count}.by(1)
+      expect{make_request}.to change{Booking.count}.by(1)
     end
 
   end
@@ -47,6 +47,7 @@ include WebHelpers
       click_link('Peacock Paradise Private Villa')
       expect(page).not_to have_selector(:link_or_button, 'Request')
     end
+
   end
 
 
