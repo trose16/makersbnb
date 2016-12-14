@@ -35,8 +35,8 @@ include WebHelpers
   end
 
   scenario "If logged in, you should be redirected to the listings page" do
-    sign_up
-    correct_log_in
+    sign_up_owner
+    log_in_owner
     visit("users/new")
     expect(current_path).to eq "/listings"
     expect(page).not_to have_button("Log in")

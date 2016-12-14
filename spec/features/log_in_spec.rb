@@ -17,7 +17,7 @@ include WebHelpers
   end
 
   scenario 'There should not be a log out button on the log in page' do
-    sign_up
+    sign_up_owner
     visit("/sessions/new")
     expect(page).not_to have_button("Log out")
 
