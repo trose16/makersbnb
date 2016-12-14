@@ -40,7 +40,7 @@ include WebHelpers
     visit("users/new")
     expect(current_path).to eq "/listings"
     expect(page).not_to have_button("Log in")
-    expect(page).to have_button ("Log out")
+    expect(page).to have_button ("log out")
   end
 
 end

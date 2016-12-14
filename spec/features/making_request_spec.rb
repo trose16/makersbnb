@@ -5,6 +5,7 @@ feature 'Requesting a listing' do
 include WebHelpers
 
   scenario "user can request a property" do
+    pending "requesting a property"
     sign_up
     create_listing
     correct_log_in
@@ -16,6 +17,7 @@ include WebHelpers
   end
 
   scenario "Saves requests to the database" do
+    pending "adding to databse"
     expect{make_request}.to change{Request.count}.by(1)
   end
 
