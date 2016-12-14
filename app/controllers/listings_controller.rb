@@ -28,7 +28,7 @@ class MakersBnb < Sinatra::Base
 
 	post '/listings/:id/request' do
 		@request = Request.create(user_id: current_user.id, listing_id: params[:id] )
-		# require 'pry'; binding.pry
+		@request.save
 		redirect '/users/requests'
 	end
 

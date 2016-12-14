@@ -5,6 +5,8 @@ RSpec.feature 'Viewing a individial listing', :type => :feature do
   include WebHelpers
 
   scenario 'user can visit page to see a listing' do
+    sign_up_owner
+    log_in_owner
     create_listing
     visit("/listings")
     click_link "Peacock Paradise Private Villa"

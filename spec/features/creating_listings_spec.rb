@@ -10,6 +10,8 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 	end
 
 	scenario 'user should be able to fill in a form' do
+		sign_up_owner
+		log_in_owner
 		create_listing
 		visit("/listings")
 		expect(page.status_code).to eq 200
@@ -17,6 +19,8 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 	end
 
 	scenario 'user should not be able to submit incomplete listing' do
+		sign_up_owner
+		log_in_owner
 		expect{create_listing(description: "", location_city: "")}.not_to change{Listing.count}
 	end
 
