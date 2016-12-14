@@ -63,16 +63,16 @@ module WebHelpers
     click_button('Log out')
   end
 
-def make_request
-  sign_up_owner
-  log_in_owner
-  create_listing
-  log_out
-  sign_up_renter
-  log_in_renter
-  click_link('Peacock Paradise Private Villa')
-  expect(page).to have_selector(:link_or_button, 'Request')
-  click_button 'Request'
-end
+  def make_request
+    sign_up_owner
+    log_in_owner
+    create_listing
+    log_out
+    sign_up_renter
+    log_in_renter
+    click_link('Peacock Paradise Private Villa')
+    expect(page).to have_selector(:link_or_button, 'Request')
+    click_button 'Request'
+  end
 
 end

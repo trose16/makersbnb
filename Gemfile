@@ -13,4 +13,5 @@ group :test do
   gem "capybara"
   gem "rake"
   gem "database_cleaner"
+  gem "launchy"
 end

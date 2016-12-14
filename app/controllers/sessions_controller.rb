@@ -14,7 +14,7 @@ class MakersBnb < Sinatra::Base
   end
 
   delete '/sessions' do
-    session[:user_id] = nil
+    session.delete(:user_id)
     redirect '/listings'
   end
 
