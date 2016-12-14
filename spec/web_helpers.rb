@@ -1,14 +1,5 @@
 module WebHelpers
-
-  @owner = {name: "Jane",
-            email: "jane@email.com",
-            password: "abcd1234",
-            password_confirm: "abcd1234"}
-
-  @renter = {}
-
-
-
+  
   def sign_up_owner(name: "Jane",
                 email: "jane@email.com",
                 password: "abcd1234",
