@@ -42,18 +42,6 @@ module WebHelpers
     click_button "List my Property"
   end
 
-  def create_incomplete_listing( name:        "Peacock Paradise Private Villa",
-                      description: "",
-                      price:       "",
-                      location_city: "London" )
-    visit '/listings/new'
-    fill_in :name, with: name
-    fill_in :description, with: description
-    fill_in :price, with: price
-    fill_in :city, with: location_city
-    click_button "List my Property"
-  end
-
 
   def log_in_owner(email: "jane@email.com",
               password: "abcd1234")
