@@ -10,6 +10,9 @@
 		<%= @listing.city %>
 		<%= @listing.country %>
 
+		<form action= "/listings/<%= @listing.id %>/request" method="post">
+			<input type="submit" value="Request">
+		</form>
 
 
 </body>

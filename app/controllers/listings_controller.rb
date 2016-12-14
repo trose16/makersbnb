@@ -25,4 +25,9 @@ class MakersBnb < Sinatra::Base
 		erb :'listings/detail'
 	end
 
+	post '/listings/:id/request' do
+		@request = Request.create(user_id: current_user.id, listing_id: params[:id] )
+		redirect '/users/requests'
+	end
+
 end
