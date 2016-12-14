@@ -31,7 +31,8 @@ module WebHelpers
                       location_country: "United Kingdom",
                       available_from:  "12/12/2016",
                       available_until: "22/04/2017" )
-    visit '/listings/new'
+    visit "/listings"
+    click_button "create listing"
     fill_in :name, with: name
     fill_in :description, with: description
     fill_in :price, with: price
