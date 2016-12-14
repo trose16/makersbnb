@@ -8,8 +8,6 @@ class MakersBnb < Sinatra::Base
     else
       erb :'users/sign_up'
     end
-
-
   end
 
   post "/users" do
