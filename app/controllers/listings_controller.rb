@@ -13,6 +13,7 @@ class MakersBnb < Sinatra::Base
 								available_from: params[:available_from],
 								available_until: params[:available_until])
 		redirect '/users/listings'
+
 	end
 
 	get '/listings' do
@@ -26,7 +27,8 @@ class MakersBnb < Sinatra::Base
 	end
 
 	post '/listings/:id/request' do
-		@request = Request.create(user_id: current_user.id, listing_id: params[:id] )
+
+		@request = Request.create(user_id: current_user.id, listing_id: 1 )
 		redirect '/users/requests'
 	end
 
