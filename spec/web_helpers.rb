@@ -60,7 +60,7 @@ module WebHelpers
   end
 
   def log_out
-    click_button('Log out')
+    click_button('log out')
   end
 
 def make_request
