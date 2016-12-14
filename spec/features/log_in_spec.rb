@@ -20,7 +20,11 @@ include WebHelpers
     sign_up_owner
     visit("/sessions/new")
     expect(page).not_to have_button("Log out")
-
   end
 
+  scenario 'Listing page has greeting when logged in' do
+    sign_up_owner
+    log_in_owner
+    expect(page).to have_content("Welcome, Jane!")
+  end
 end

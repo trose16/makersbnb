@@ -1,13 +1,7 @@
 class MakersBnb < Sinatra::Base
 
   get '/sessions/new' do
-
-    if current_user
-      redirect "/listings"
-    else
-      erb :'sessions/log_in'
-    end
-
+    current_user ? (redirect "/listings") : (erb :'sessions/log_in')
   end
 
   post '/sessions' do
