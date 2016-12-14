@@ -3,9 +3,13 @@
 <html>
 <body>
 	<h1>Listings</h1>
-	<form action="/listings/new" method="get">
-		<input type="submit" value="create listing">
-	</form>
+	
+	<% if current_user %>
+		<form action="/listings/new" method="get">
+			<input type="submit" value="create listing">
+		</form>
+	<%end%>
+
 	<ul id='listings'>
 		<% @listings.each do |listing| %>
 			<li>
