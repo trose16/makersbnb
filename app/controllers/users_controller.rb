@@ -3,7 +3,13 @@
 class MakersBnb < Sinatra::Base
 
   get "/users/new" do
-    erb :'users/sign_up'
+    if current_user
+      redirect "/listings"
+    else
+      erb :'users/sign_up'
+    end
+
+
   end
 
   post "/users" do

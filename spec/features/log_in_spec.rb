@@ -16,4 +16,11 @@ include WebHelpers
     expect(page).not_to have_content 'Listings'
   end
 
+  scenario 'When logged out. The log in page, should have buttons for log in or log out' do
+    sign_up
+    visit("/sessions/new")
+    expect(page).not_to have_button("Log out")
+     
+  end
+
 end
