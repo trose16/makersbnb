@@ -31,7 +31,8 @@ module WebHelpers
                       location_country: "United Kingdom",
                       available_from:  "12/12/2016",
                       available_until: "22/04/2017" )
-    visit '/listings/new'
+    visit "/listings"
+    click_button "create listing"
     fill_in :name, with: name
     fill_in :description, with: description
     fill_in :price, with: price
@@ -60,19 +61,18 @@ module WebHelpers
   end
 
   def log_out
-    click_button('Log out')
+    click_button('log out')
   end
 
-  def make_request
-    sign_up_owner
-    log_in_owner
-    create_listing
-    log_out
-    sign_up_renter
-    log_in_renter
-    click_link('Peacock Paradise Private Villa')
-    expect(page).to have_selector(:link_or_button, 'Request')
-    click_button 'Request'
-  end
+def make_request
+  sign_up_owner
+  log_in_owner
+  create_listing
+  log_out
+  sign_up_renter
+  log_in_renter
+  click_link('Peacock Paradise Private Villa')
+  click_button 'Request'
+end
 
 end

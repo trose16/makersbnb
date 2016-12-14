@@ -4,9 +4,31 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 
 	include WebHelpers
 
-	scenario 'user can visit page to add a new listing' do
-		visit '/listings/new'
-		expect(page.status_code).to eq 200
+	describe 'When users are logged in' do
+			scenario 'user can visit page to add a new listing' do
+				sign_up_owner
+				log_in_owner
+				visit '/listings/new'
+				expect(page.status_code).to eq 200
+			end
+
+			scenario 'user can see creat listing button' do
+				sign_up_owner
+				log_in_owner
+				expect(page).to have_button("create listing")
+			end
+	end
+
+	describe 'When users are not logged in' do
+			scenario 'user cannot visit page to add a new listing' do
+				visit '/listings/new'
+				expect(current_path).to eq('/users/new')
+			end
+
+			scenario 'user cannot see creat listing button' do
+				visit '/listings'
+				expect(page).not_to have_button("create listing")
+			end
 	end
 
 	scenario 'user should be able to fill in a form' do

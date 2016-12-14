@@ -4,6 +4,14 @@
 <body>
 	<h1>Listings</h1>
 
+	<% if current_user %>
+		Welcome, <%= current_user.name %>!<br>
+		<br>
+		<form action="/listings/new" method="get">
+			<input type="submit" value="create listing">
+		</form>
+	<%end%>
+
 	<ul id='listings'>
 		<% @listings.each do |listing| %>
 			<li>

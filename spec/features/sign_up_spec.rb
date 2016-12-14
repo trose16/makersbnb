@@ -29,4 +29,18 @@ include WebHelpers
     expect{sign_up_owner}.to change{User.count}.by(0)
   end
 
+  scenario "If not logged in, there should be no log out button" do
+    visit("/users/new")
+    expect(page).not_to have_button("Log out")
+  end
+
+  scenario "If logged in, you should be redirected to the listings page" do
+    sign_up_owner
+    log_in_owner
+    visit("users/new")
+    expect(current_path).to eq "/listings"
+    expect(page).not_to have_button("Log in")
+    expect(page).to have_button ("log out")
+  end
+
 end

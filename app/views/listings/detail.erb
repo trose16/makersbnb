@@ -2,6 +2,8 @@
 
 <html>
 <body>
+
+
 	<h1>Listing information</h1>
 
     <%= @listing.name %><br>
@@ -10,10 +12,11 @@
 	<%= @listing.city %>
 	<%= @listing.country %>
 
-	<form action= "/listings/<%= @listing.id %>/request" method="post">
-		<input type="submit" value="Request">
-	</form>
-
+		<%if current_user%>
+			<form action= "/requests" method="get">
+				<input type="submit" value="Request">
+			</form>
+		<%end%>
 
 </body>
 </html>
