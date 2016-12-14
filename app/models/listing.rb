@@ -15,6 +15,6 @@ class Listing
 	property :city, String, required: true
 
 	belongs_to :user
-	has n, :requests
+	has n, :bookings
 
 end

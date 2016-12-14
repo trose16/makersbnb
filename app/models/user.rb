@@ -12,7 +12,7 @@ class User
 	property :password_digest, Text, :required => true
 
 	has n, :listings
-	has n, :requests
+	has n, :bookings
 
 	attr_accessor :password_confirmation
 	attr_reader :password

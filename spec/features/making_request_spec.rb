@@ -10,7 +10,7 @@ include WebHelpers
   end
 
   scenario "Saves requests to the database" do
-    expect{make_request}.to change{Request.count}.by(1)
+    expect{make_request}.to change{Booking.count}.by(1)
   end
 
 end

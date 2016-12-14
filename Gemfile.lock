@@ -129,7 +129,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  sinatra (= 1.4.7)
+  sinatra
   sinatra-flash
   sinatra-partial
 
