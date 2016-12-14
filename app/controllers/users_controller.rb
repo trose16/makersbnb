@@ -1,5 +1,3 @@
-
-
 class MakersBnb < Sinatra::Base
 
   get "/users/new" do
@@ -17,10 +15,6 @@ class MakersBnb < Sinatra::Base
 
   get "/users/requests" do
     hello world
-  end
-
-  get "/users/listings" do
-    'Peacock Paradise Private Villa'
   end
 
 end

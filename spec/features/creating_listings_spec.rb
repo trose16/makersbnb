@@ -17,7 +17,7 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 	end
 
 	scenario 'user should not be able to submit incomplete listing' do
-		expect{create_incomplete_listing}.not_to change{Listing.count}
+		expect{create_listing(description: "", location_city: "")}.not_to change{Listing.count}
 	end
 
 end
