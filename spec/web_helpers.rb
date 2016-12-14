@@ -1,5 +1,5 @@
 module WebHelpers
-  
+
   def sign_up_owner(name: "Jane",
                 email: "jane@email.com",
                 password: "abcd1234",
@@ -55,7 +55,7 @@ module WebHelpers
   end
 
 
-  def log_in(email: "jane@email.com", 
+  def log_in_owner(email: "jane@email.com",
               password: "abcd1234")
     visit '/sessions/new'
     fill_in "email", with:  email
@@ -63,10 +63,25 @@ module WebHelpers
     click_button 'log-in'
   end
 
+  def log_in_renter(email: "sam@email.com",
+              password: "efgh5678")
+    visit '/sessions/new'
+    fill_in "email", with:  email
+    fill_in "password", with: password
+    click_button 'log-in'
+  end
+
+  def log_out
+    click_button('Log out')
+  end
+
 def make_request
-  sign_up
+  sign_up_owner
+  log_in_owner
   create_listing
-  visit '/listings'
+  log_out
+  sign_up_renter
+  log_in_renter
   click_link('Peacock Paradise Private Villa')
   expect(page).to have_selector(:link_or_button, 'Request')
   click_button 'Request'

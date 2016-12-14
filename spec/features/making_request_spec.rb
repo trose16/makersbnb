@@ -5,13 +5,7 @@ feature 'Requesting a listing' do
 include WebHelpers
 
   scenario "user can request a property" do
-    sign_up
-    create_listing
-    correct_log_in
-    visit('/listings')
-    click_link('Peacock Paradise Private Villa')
-    expect(page).to have_selector(:link_or_button, 'Request')
-    click_button 'Request'
+    make_request
     expect(current_path).to eq "/users/requests"
   end
 

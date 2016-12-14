@@ -6,13 +6,13 @@ include WebHelpers
 
   scenario 'Logging in with correct creds takes you to listings page' do
     sign_up_owner
-    log_in
+    log_in_owner
     expect(page).to have_content 'Listings'
   end
 
   scenario 'Logging in with incorrect creds does not take you to listings page' do
     sign_up_owner
-    log_in(password: "abc")
+    log_in_owner(password: "abc")
     expect(page).not_to have_content 'Listings'
   end
 
