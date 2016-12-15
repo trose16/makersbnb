@@ -30,4 +30,8 @@ class Listing
 		(request_date - self.date_availability).empty?
 	end
 
+	def update_availability(booking_date)
+		self.date_availability - booking_date
+	end
+
 end
