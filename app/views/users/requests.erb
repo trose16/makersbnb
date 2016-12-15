@@ -18,7 +18,7 @@
 		<% @owner_bookings.each do |booking| %>
 			<li>
 				<%= booking.listing.name %>, Requested by: <%= booking.user.name %>
-				<form action="/requests/confirm" method="get">
+				<form action="/requests/<%= booking.id %>/confirm" method="post">
 					<input type="submit" value="Confirm">
 				</form>
 				<form action="/requests/deny" method="get">
