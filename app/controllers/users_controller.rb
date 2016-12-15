@@ -14,7 +14,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get "/users/requests" do
-    hello world
+    
   end
 
 end

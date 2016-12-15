@@ -13,7 +13,7 @@
 	<%= @listing.country %>
 
 		<%if current_user%>
-			<form action= "/requests" method="get">
+			<form action= "/listings/<%= @listing.id %>/request" method="post">
 				<input type="submit" value="Request">
 			</form>
 		<%end%>
