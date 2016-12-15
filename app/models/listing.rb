@@ -25,6 +25,9 @@ class Listing
 		self.date_availability = (date_from..date_to).map(&:to_s)
 	end
 
-
+	def check_availability(from, to)
+		request_date = (from..to).map(&:to_s)
+		(request_date - self.date_availability).empty?
+	end
 
 end
