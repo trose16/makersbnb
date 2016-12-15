@@ -11,6 +11,8 @@
     <%= @listing.price %><br>
 		<%= @listing.city %><br>
 		<%= @listing.country %><br>
+		<%= @listing.available_from %><br>
+		<%= @listing.available_until %><br>
 
 		<%if current_user%>
 			<form action= "/listings/<%= @listing.id %>/request" method="post">
