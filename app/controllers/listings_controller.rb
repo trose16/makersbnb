@@ -29,7 +29,6 @@ class MakersBnb < Sinatra::Base
 
 	post '/listings/:id/request' do
 		@booking = Booking.create(user_id: current_user.id, listing_id: params[:id] )
-		p @booking
 		redirect '/users/requests'
 	end
 

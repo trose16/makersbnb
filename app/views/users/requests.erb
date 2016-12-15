@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+	<h1>Requests I have made:</h1>
+
+	<ul id='renter_bookings'>
+		<% @bookings.each do |booking| %>
+			<li>
+				<%= booking.listing.name %>
+			</li>
+		<% end %>
+	</ul>
+
+</body>
+</html>

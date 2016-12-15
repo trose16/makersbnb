@@ -7,14 +7,7 @@ include WebHelpers
   describe "when logged in" do
 
     scenario "user can request a property" do
-      sign_up_owner
-      log_in_owner
-      create_listing
-      log_out
-      sign_up_renter
-      log_in_renter
-      click_link('Peacock Paradise Private Villa')
-      click_button 'Request'
+      make_request
       expect(current_path).to eq "/users/requests"
     end
 
