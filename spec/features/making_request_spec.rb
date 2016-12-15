@@ -30,6 +30,17 @@ include WebHelpers
       expect{make_unavailable_request}.to change{Booking.count}.by(0)
     end
 
+    scenario "does not save requests to the database after someone has booked the dates already" do
+      make_request
+      log_out
+      log_in_owner
+      visit "/users/requests"
+      click_button "Confirm"
+      log_out
+      expect{make_second_request}.to change{Booking.count}.by(0)
+      expect(page).to have_content("Sorry, the dates are not available.")
+    end
+
   end
 
   describe "when not logged in" do
