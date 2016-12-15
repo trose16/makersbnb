@@ -1,8 +1,21 @@
-  <form action="/sessions" method="post">
-    <input type='hidden' name='_method' value='delete'>
-    <input type="submit" value="Log out">
-  </form>
 
-  <form action="/sessions/new" method="get">
-    <input type="submit" value="Log in">
-  </form>
+<body>
+
+  <nav>
+    <ul>
+      <li> <a href="/">Home</a></li>
+      <li> <a href="/listing/new">List a property</a></li>
+      <li> <a href="/listings/new">See rentals</a></li>
+    </ul>
+  </nav>
+
+    <form action="/sessions" method="post">
+      <input type='hidden' name='_method' value='delete'>
+      <input type="submit" value="Log out">
+    </form>
+
+    <form action="/sessions/new" method="get">
+      <input type="submit" value="Log in">
+    </form>
+
+</body>
