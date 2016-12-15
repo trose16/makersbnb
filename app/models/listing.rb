@@ -14,4 +14,7 @@ class Listing
 	property :country, String, required: true
 	property :city, String, required: true
 
+	belongs_to :user
+	has n, :bookings
+
 end

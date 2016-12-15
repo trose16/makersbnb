@@ -2,18 +2,23 @@
 
 <html>
 <body>
+
+
 	<h1>Listing information</h1>
 
     <%= @listing.name %><br>
     <%= @listing.description %><br>
     <%= @listing.price %><br>
-		<%= @listing.city %>
-		<%= @listing.country %>
+		<%= @listing.city %><br>
+		<%= @listing.country %><br>
 
-		<form action= "/listings/<%= @listing.id %>/request" method="post">
-			<input type="submit" value="Request">
-		</form>
-
+		<%if current_user%>
+			<form action= "/listings/<%= @listing.id %>/request" method="post">
+				Booking from:<input type="date" name="book_from" placeholder="DD/MM/YYYY">
+				to:<input type="date" name="book_to" placeholder="DD/MM/YYYY"><br>
+				<input type="submit" value="Request">
+			</form>
+		<%end%>
 
 </body>
 </html>

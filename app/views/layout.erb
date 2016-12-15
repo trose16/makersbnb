@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Molle:400i|Roboto" rel="stylesheet">
+  <head>
+   href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Molle:400i|Roboto" rel="stylesheet">
 
-  <link rel='stylesheet' type='text/css' href='/css/style.css'>
-<head/>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
+  <head/>
 
-<body>
+  <body>
 
   <%= partial :flash %>
   <%= partial :header %>
+  <%= yield %>
 
-</body>
-
-<%= yield %>
-
-</html>
+  </body>
+ </html>

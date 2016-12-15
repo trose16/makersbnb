@@ -29,9 +29,10 @@ module WebHelpers
                       price:       "50",
                       location_city: "London",
                       location_country: "United Kingdom",
-                      available_from:  "12/12/2016",
-                      available_until: "22/04/2017" )
-    visit '/listings/new'
+                      available_from:  "2016-12-12",
+                      available_until: "2017-11-11" )
+    visit "/listings"
+    click_button "create listing"
     fill_in :name, with: name
     fill_in :description, with: description
     fill_in :price, with: price
@@ -60,10 +61,10 @@ module WebHelpers
   end
 
   def log_out
-    click_button('Log out')
+    click_button('log out')
   end
 
-def make_request
+def make_request(from: "2016-12-16", to: "2017-01-01")
   sign_up_owner
   log_in_owner
   create_listing
@@ -71,7 +72,8 @@ def make_request
   sign_up_renter
   log_in_renter
   click_link('Peacock Paradise Private Villa')
-  expect(page).to have_selector(:link_or_button, 'Request')
+  fill_in "book_from", with: from
+  fill_in "book_to", with: to
   click_button 'Request'
 end
 

@@ -23,7 +23,7 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do
-    DatabaseCleaner.clean
+    DatabaseCleaner.clean_with(:truncation)
   end
 
   config.expect_with :rspec do |expectations|

@@ -1,7 +1,7 @@
 class MakersBnb < Sinatra::Base
 
 	get '/listings/new' do
-		erb :'listings/new'
+		current_user ? (erb :'listings/new') : (redirect '/users/new')
 	end
 
 	post '/listings/add' do
@@ -11,8 +11,10 @@ class MakersBnb < Sinatra::Base
 								city: params[:city],
 								country: params[:country],
 								available_from: params[:available_from],
-								available_until: params[:available_until])
+								available_until: params[:available_until],
+								user_id: current_user.id)
 		redirect '/listings'
+
 	end
 
 	get '/listings' do
@@ -26,7 +28,7 @@ class MakersBnb < Sinatra::Base
 	end
 
 	post '/listings/:id/request' do
-		@request = Request.create(user_id: current_user.id, listing_id: params[:id] )
+		@booking = Booking.create(user_id: current_user.id, listing_id: params[:id] )
 		redirect '/users/requests'
 	end
 
