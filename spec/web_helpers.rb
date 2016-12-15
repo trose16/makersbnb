@@ -24,6 +24,18 @@ module WebHelpers
     click_button "submit"
   end
 
+  def sign_up_another_renter(name: "Tom",
+                      email: "tom@email.com",
+                      password: "efgh5678",
+                      password_confirm: "efgh5678")
+    visit "/users/new"
+    fill_in "name", with: name
+    fill_in "email", with: email
+    fill_in "password", with: password
+    fill_in "password_confirm", with: password_confirm
+    click_button "submit"
+  end
+
   def create_listing( name:        "Peacock Paradise Private Villa",
                       description: "My home has peacocks and a pool.",
                       price:       "50",
@@ -60,6 +72,14 @@ module WebHelpers
     click_button 'log-in'
   end
 
+  def log_in_another_renter(email: "tom@email.com",
+              password: "efgh5678")
+    visit '/sessions/new'
+    fill_in "email", with:  email
+    fill_in "password", with: password
+    click_button 'log-in'
+  end
+
   def log_out
     click_button('log out')
   end
@@ -71,6 +91,15 @@ module WebHelpers
     log_out
     sign_up_renter
     log_in_renter
+    click_link('Peacock Paradise Private Villa')
+    fill_in "book_from", with: from
+    fill_in "book_to", with: to
+    click_button 'Request'
+  end
+
+  def make_second_request(from: "2016-01-03", to: "2016-01-07")
+    sign_up_another_renter
+    log_in_another_renter
     click_link('Peacock Paradise Private Villa')
     fill_in "book_from", with: from
     fill_in "book_to", with: to

@@ -31,10 +31,10 @@ class MakersBnb < Sinatra::Base
 
 	post '/listings/:id/request' do
 		@listing = Listing.first( id: params[:id] )
-		
+
 		if @listing.check_availability( params[:book_from], params[:book_to] )
 			@booking = Booking.create(user_id: current_user.id, listing_id: params[:id] )
-			redirect '/users/requests'
+			redirect "/users/requests"
 		else
 			flash.keep[:notice] = "Sorry, the dates are not available."
 			redirect '/listings'
