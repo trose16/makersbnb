@@ -6,7 +6,7 @@ class Booking
   include DataMapper::Resource
 
   property :id, Serial
-  property :accepted, Boolean
+  property :status, String
 
   belongs_to :user
   belongs_to :listing

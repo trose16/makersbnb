@@ -38,5 +38,15 @@ include WebHelpers
 			expect(page).to have_content('Request has been denied')
 		end
 
+	    scenario "user can see bookings they have denied" do
+			make_request
+			log_out
+			log_in_owner
+			visit '/users/requests'
+			click_button('Deny')
+			click_link('Go back to my requests')
+			expect(page).to have_content('Booking has been rejected')
+	    end
+
 	end
 end

@@ -19,13 +19,15 @@
 			<li>
 				<%= booking.listing.name %>, Requested by: <%= booking.user.name %>
 				<br>
-				<% if booking.accepted == true %>
+				<% if booking.status == "accepted" %>
 				Booking has been accepted.
-				<% else %>
+				<% elsif booking.status == "rejected" %>
+				Booking has been rejected.
+				<% elsif booking.status == "pending" %>
 				<form action="/requests/<%= booking.id %>/confirm" method="post">
 					<input type="submit" value="Confirm">
 				</form>
-				<form action="/requests/deny" method="get">
+				<form action="/requests/<%= booking.id %>/deny" method="post">
 					<input type="submit" value="Deny">
 				</form>
 				<% end %>
