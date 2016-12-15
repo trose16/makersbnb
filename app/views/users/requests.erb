@@ -5,9 +5,19 @@
 	<h1>Requests I have made:</h1>
 
 	<ul id='renter_bookings'>
-		<% @bookings.each do |booking| %>
+		<% @renter_bookings.each do |booking| %>
 			<li>
 				<%= booking.listing.name %>
+			</li>
+		<% end %>
+	</ul>
+
+	<h1>Requests I have received:</h1>
+
+	<ul id='owner_bookings'>
+		<% @owner_bookings.each do |booking| %>
+			<li>
+				<%= booking.listing.name %>, Requested by: <%= booking.listing.user.name %>
 			</li>
 		<% end %>
 	</ul>

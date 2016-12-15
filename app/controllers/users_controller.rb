@@ -14,7 +14,8 @@ class MakersBnb < Sinatra::Base
   end
 
   get "/users/requests" do
-    @bookings = Booking.all(user_id: current_user.id)
+    @renter_bookings = current_user.bookings
+    @owner_bookings = current_user.listings.bookings
     erb :'users/requests'
   end
 
