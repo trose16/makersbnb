@@ -7,7 +7,6 @@ include WebHelpers
   describe "when logged in" do
 
     scenario "user can request a property" do
-      pending "requesting a property"
       sign_up_owner
       log_in_owner
       create_listing
@@ -31,7 +30,6 @@ include WebHelpers
     end
 
     scenario "Saves requests to the database" do
-      pending "adding to databse"
       expect{make_request}.to change{Booking.count}.by(1)
     end
 
