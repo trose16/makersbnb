@@ -22,8 +22,12 @@ include WebHelpers
       expect(page).to have_selector(:link_or_button, 'Request')
     end
 
-    scenario "Saves requests to the database" do
+    scenario "Saves requests to the database when the listing is available" do
       expect{make_request}.to change{Booking.count}.by(1)
+    end
+
+    scenario "does not save requests to the database when the listing is unavailable" do
+      expect{make_unavailable_request}.to change{Booking.count}.by(0)
     end
 
   end

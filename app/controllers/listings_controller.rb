@@ -13,6 +13,8 @@ class MakersBnb < Sinatra::Base
 								available_from: params[:available_from],
 								available_until: params[:available_until],
 								user_id: current_user.id)
+		@listing.set_date_availability
+		@listing.save
 		redirect '/listings'
 
 	end
@@ -28,8 +30,16 @@ class MakersBnb < Sinatra::Base
 	end
 
 	post '/listings/:id/request' do
-		@booking = Booking.create(status: "pending", user_id: current_user.id, listing_id: params[:id] )
-		redirect '/users/requests'
+		@listing = Listing.first( id: params[:id] )
+		
+		if @listing.check_availability( params[:book_from], params[:book_to] )
+			@booking = Booking.create(user_id: current_user.id, listing_id: params[:id] )
+			redirect '/users/requests'
+		else
+			flash.keep[:notice] = "Sorry, the dates are not available."
+			redirect '/listings'
+		end
+
 	end
 
 end

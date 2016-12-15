@@ -15,6 +15,10 @@ RSpec.feature 'Viewing a individial listing', :type => :feature do
     expect(page).to have_content("50")
     expect(page).to have_content("London")
     expect(page).to have_content("United Kingdom")
+    expect(page).to have_content("2016-01-01")
+    expect(page).to have_content("2016-02-01")
+
+
   end
 
 end
