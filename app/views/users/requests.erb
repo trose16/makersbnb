@@ -18,12 +18,17 @@
 		<% @owner_bookings.each do |booking| %>
 			<li>
 				<%= booking.listing.name %>, Requested by: <%= booking.user.name %>
+				<br>
+				<% if booking.accepted == true %>
+				Booking has been accepted.
+				<% else %>
 				<form action="/requests/<%= booking.id %>/confirm" method="post">
 					<input type="submit" value="Confirm">
 				</form>
 				<form action="/requests/deny" method="get">
 					<input type="submit" value="Deny">
 				</form>
+				<% end %>
 			</li>
 		<% end %>
 	</ul>
