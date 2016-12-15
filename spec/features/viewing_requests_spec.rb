@@ -20,7 +20,7 @@ include WebHelpers
 			log_in_owner
 			visit '/users/requests'
 			expect(page).to have_content("Peacock Paradise Private Villa")
-			expect(page).to have_content("Requested by: Jane")
+			expect(page).to have_content("Requested by: Sam")
 		end
 
 	end
