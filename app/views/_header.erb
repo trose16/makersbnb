@@ -1,12 +1,18 @@
 <body>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Molle:400i|Roboto" rel="stylesheet">
+
+   <link rel='stylesheet' type='text/css' href='/css/style.css'>
 
   <nav>
     <ul>
-      <li> <a href="/">Home</a></li>
-      <li> <a href="/listing/new">List a property</a></li>
-      <li> <a href="/listings/new">See rentals</a></li>
+      <li> <a href="/listings">Home</a></li>
+      <li> <a href="/users/new">Sign up</a></li>
+      <li> <a href="/listings/new">List a property</a></li>
+      <li> <a href="/listings">See rentals</a></li>
     </ul>
   </nav>
+
+  <div class="parallax"></div>
 
   <%if !current_user%>
     <form action="/sessions/new" method="get">

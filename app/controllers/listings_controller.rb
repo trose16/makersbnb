@@ -1,5 +1,6 @@
 class MakersBnb < Sinatra::Base
 
+
 	get '/listings/new' do
 		current_user ? (erb :'listings/new') : (redirect '/users/new')
 	end

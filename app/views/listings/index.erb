@@ -2,23 +2,28 @@
 
 <html>
 <body>
-	<h1>Listings</h1>
+	<h2>Listings</h2>
 
 	<% if current_user %>
-		Welcome, <%= current_user.name %>!<br>
-		<br>
-		<form action="/listings/new" method="get">
-			<input type="submit" value="create listing">
-		</form>
+		<h1>	Welcome, <%= current_user.name %>!</h1><br>
 	<%end%>
 
-	<ul id='listings'>
+		<br>
+
+	<ul class="listings" id='listings'>
 		<% @listings.each do |listing| %>
-			<li>
+			<li class="listings">
 				<a href='/listings/<%= listing.id %>'><%= listing.name %></a>
 			</li>
 		<% end %>
 	</ul>
+
+	<% if current_user %>
+		<form class="main-form" action="/listings/new" method="get">
+		<input class="button" type="submit" value="Create Listing">
+		</form>
+	<%end%>
+
 
 </body>
 </html>
