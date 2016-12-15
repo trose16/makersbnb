@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+	<h1>Requests I have made:</h1>
+
+	<ul id='renter_bookings'>
+		<% @renter_bookings.each do |booking| %>
+			<li>
+				<%= booking.listing.name %>
+			</li>
+		<% end %>
+	</ul>
+
+	<h1>Requests I have received:</h1>
+
+	<ul id='owner_bookings'>
+		<% @owner_bookings.each do |booking| %>
+			<li>
+				<%= booking.listing.name %>, Requested by: <%= booking.user.name %>
+				<br>
+				<% if booking.status == "accepted" %>
+				Booking has been accepted.
+				<% elsif booking.status == "rejected" %>
+				Booking has been rejected.
+				<% elsif booking.status == "pending" %>
+				<form action="/requests/<%= booking.id %>/confirm" method="post">
+					<input type="submit" value="Confirm">
+				</form>
+				<form action="/requests/<%= booking.id %>/deny" method="post">
+					<input type="submit" value="Deny">
+				</form>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+
+</body>
+</html>

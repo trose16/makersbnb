@@ -1,15 +1,15 @@
 <html>
-  <head>   </head>
+  <head>
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Molle:400i|Roboto" rel="stylesheet">
+  </head>
   <body>
-    <form method='post' action='/sessions'>
-      <label for="email">Please enter your email</label>
-      <input type="email" name="email" required></br>
-      <label for="password">Please enter your password</label>
-      <input type="password" name="password" required></br>
-      <input type="submit" id="log-in">
+    <h1> Log in to MakersBnb </h1>
+
+    <form class="log-in" method='post' action='/sessions'>
+      <input type="email" name="email" placeholder="Enter your email*" required></br>
+      <input type="password" name="password" placeholder="Enter your password*" required></br>
+      <input class="log-in" type="submit" id="log-in" value="Log In">
     </form>
 
   </body>
-
-
 </html>
