@@ -101,11 +101,11 @@ I would like the property-owner to confirm my booking.
 Description
 ===========
 This is the week 6 project at Makers Academy. The task was to design an AirBnB clone - MakersBnB! The collaborators on this project were:
-* [Leke Abolade]!(https://github.com/aabolade)
-* [Simon Conway]!(https://github.com/simonconway1979)
-* [Asuka Ochi]!(https://github.com/fenglish)
-* [Teako Warfield-Graham]!(https://github.com/trose16)
-* [Kim Wilson]!(https://github.com/kwilson541)
+* [Leke Abolade](https://github.com/aabolade)
+* [Simon Conway](https://github.com/simonconway1979)
+* [Asuka Ochi](https://github.com/fenglish)
+* [Teako Warfield-Graham](https://github.com/trose16)
+* [Kim Wilson](https://github.com/kwilson541)
 
 Our goal was to create a product that catered to the user stories listed above. Our final product had the following specification:
 * Users can sign up to MakersBnB
