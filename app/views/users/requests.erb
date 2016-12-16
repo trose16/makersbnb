@@ -7,7 +7,7 @@
 	<ul id='renter_bookings'>
 		<% @renter_bookings.each do |booking| %>
 			<li>
-				<%= booking.listing.name %>
+				<a href='/listings/<%= booking.listing.id %>'><%= booking.listing.name %></a>
 			</li>
 		<% end %>
 	</ul>

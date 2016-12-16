@@ -10,6 +10,13 @@ include WebHelpers
 	    	make_request
 	    	expect(page).to have_content("Peacock Paradise Private Villa")
 	    end
+
+	    scenario "user can view listing details of a property they have requested" do
+	    	make_request
+	    	click_link("Peacock Paradise Private Villa")
+	    	expect(page).to have_content("My home has peacocks and a pool.")
+	    end
+
 	end
 
 	describe "owner requests" do
