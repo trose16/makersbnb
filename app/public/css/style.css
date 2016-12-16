@@ -32,16 +32,15 @@ nav li a:hover {
   font-size: 25px;
 }
 
-/*ul.listings {
+ul.listings {
   list-style-type: none;
-}*/
+}
 
 ul.listings {
   float: left;
   width: 150px;
   height: 75px;
   margin: 10px;
-  border: 3px solid #73AD21;
 }
 
 li.listings {
@@ -73,7 +72,7 @@ div.parallax {
 h1 { font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   color: #2dd2a8;
-  margin: 0px;
+  margin: 25px auto;
 }
 
 h2 { font-family: 'Lobster', cursive;
@@ -115,12 +114,13 @@ form.main-form { height: 300px; width: 100%;
 
 input {
   color: #fff;
+  font-size: 12px;
   padding: 5px;
   border: 2px;
   width: 220px;
   height: 25px;
   margin-bottom: 10px;
-  background-color: rgba(255,255, 255, .15)
+  background-color: rgba(255,255, 255, .25)
 
 }
 
@@ -131,4 +131,13 @@ input.button {
   font-size: 20px;
   border: none;
   width: 227px; height: 50px;
+}
+
+input.log-in-btn {
+  background-color: #2dd2a8;
+  padding: 5px;
+  color: #ffffff;
+  font-size: 22px;
+  border: none;
+  width: 100px; height: 30px;
 }
