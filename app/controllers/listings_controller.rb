@@ -20,6 +20,7 @@ class MakersBnb < Sinatra::Base
 	end
 
 	get '/listings' do
+		@sort_date = session[:available_date]
 		@listings = Listing.all
 		erb :'listings/index'
 	end
@@ -42,6 +43,14 @@ class MakersBnb < Sinatra::Base
 			redirect '/listings'
 		end
 
+	end
+
+	post '/listings/sort' do
+		from = params[:available_from]
+		to = params[:available_until]
+		request_date = (from..to).map(&:to_s)
+		session[:available_date] = request_date
+		redirect '/listings'
 	end
 
 end
