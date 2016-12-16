@@ -8,7 +8,6 @@ class MakersBnb < Sinatra::Base
 		availability = @listing.date_availability
 		updated_dates = availability - @booking.date_availability
 		@listing.update(date_availability: updated_dates)
-
 		redirect '/requests/confirm'
 	end
 
