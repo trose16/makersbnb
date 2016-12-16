@@ -101,11 +101,11 @@ I would like the property-owner to confirm my booking.
 Description
 ===========
 This is the week 6 project at Makers Academy. The task was to design an AirBnB clone - MakersBnB! The collaborators on this project were:
-* Leke Abolade
-* Simon Conway
-* Asuka Ochi
-* Teako Warfield-Graham
-* Kim Wilson
+* [Leke Abolade]!(https://github.com/aabolade)
+* [Simon Conway]!(https://github.com/simonconway1979)
+* [Asuka Ochi]!(https://github.com/fenglish)
+* [Teako Warfield-Graham]!(https://github.com/trose16)
+* [Kim Wilson]!(https://github.com/kwilson541)
 
 Our goal was to create a product that catered to the user stories listed above. Our final product had the following specification:
 * Users can sign up to MakersBnB
@@ -160,3 +160,5 @@ There are several additional features which we had considered and would have lik
 * Images: Allow users to upload images of their property to the app. These images would then be displayed on each listing.
 * Email notification: Send users emails when they have received a request on one of their listings, or when one of their booking requests has been confirmed.
 * Price calculation: When users make a request on a listing and enter the dates they wish to book, the total cost of their stay will be calculated and displayed.
+* Stripe integration for basic payment implementation
+* A 'chat' functionality once a space has been booked, allowing users who have made a book to communicate with their hosts.

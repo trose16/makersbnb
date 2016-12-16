@@ -10,7 +10,6 @@ class MakersBnb < Sinatra::Base
 
   post "/users" do
     user = User.create(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirm] )
-      #require 'pry';binding.pry
     if user.id == nil
       flash.next[:sign_up_error] = "Passwords do not match Please try again."
       redirect '/users/new'
