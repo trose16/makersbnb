@@ -2,29 +2,22 @@
 
 <html>
 <head>
-	href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Molle:400i|Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Molle:400i|Roboto" rel="stylesheet">
 
 	<link rel='stylesheet' type='text/css' href='/css/style.css'>
 </head>
 <body>
 	<h1>Add a Listing</h1>
 
-	<form action="/listings/add" method="post">
-		Property Name:
-		<input type="text" name="name" required><br>
-		Description:
-		<input type="text" name="description" required><br>
-		Price per Night:
-		<input type="text" name="price" required><br>
-		Available from:
-		<input type="date" name="available_from" placeholder="DD/MM/YYYY"><br>
-		Available until:
-		<input type="date" name="available_until" placeholder="DD/MM/YYYY"><br>
-		City Location:
-		<input type="text" name="city" required><br>
-		Country:
-		<input type="text" name="country" required><br>
-		<input type="submit" value="List my Property">
+	<form class="main-form" action="/listings/add" method="post">
+		<input type="text" name="name" placeholder="Property Name*" required><br>
+		<input type="text" name="description" placeholder="Description*" required><br>
+		<input type="text" name="price" placeholder="Price Per Night*" required><br>
+		<input type="date" name="available_from" placeholder="Available From* DD/MM/YYYY"><br>
+		<input type="date" name="available_until" placeholder="Available Until* DD/MM/YYYY"><br>
+		<input type="text" name="city" placeholder="City*" required><br>
+		<input type="text" name="country" placeholder="Country*" required><br>
+		<input class="button" type="submit" value="List my Property">
 	</form>
 </body>
 </html>
