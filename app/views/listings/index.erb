@@ -12,11 +12,26 @@
 		</form>
 	<%end%>
 
+	<form action="/listings/sort" method="post">
+		Available from:
+		<input type="date" name="available_from" placeholder="DD/MM/YYYY">
+		Available until:
+		<input type="date" name="available_until" placeholder="DD/MM/YYYY">
+		<input type="submit" value="Show Available Property">
+	</form>
+
 	<ul id='listings'>
-		<% @listings.each do |listing| %>
-			<li>
-				<a href='/listings/<%= listing.id %>'><%= listing.name %></a>
-			</li>
+		<% if @sort_date %>
+				<% @listings.each do |listing| %>
+					<% if ( @sort_date - listing.date_availability).empty? %>
+						<li><a href='/listings/<%= listing.id %>'><%= listing.name %></a></li>
+					<%end%>
+				<% end %>
+				<% session[:available_date] = nil %>
+		<% else %>
+				<% @listings.each do |listing| %>
+					<li><a href='/listings/<%= listing.id %>'><%= listing.name %></a></li>
+				<% end %>
 		<% end %>
 	</ul>
 
