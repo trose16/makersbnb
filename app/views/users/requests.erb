@@ -6,13 +6,13 @@
 
 	<ul id='renter_bookings'>
 		<% @renter_bookings.each do |booking| %>
-			<li>
-				<a href='/listings/<%= booking.listing.id %>'><%= booking.listing.name %></a>
+			<div class="box_list">
+				<h3><a href='/listings/<%= booking.listing.id %>'><%= booking.listing.name %></a></h3>
 				<br>
 				Requested from: <%= booking.book_from %>
 				<br>
 				Requested until: <%= booking.book_to %>
-			</li>
+			</div>
 		<% end %>
 	</ul>
 
@@ -20,26 +20,28 @@
 
 	<ul id='owner_bookings'>
 		<% @owner_bookings.each do |booking| %>
-			<li>
-				<%= booking.listing.name %>, Requested by: <%= booking.user.name %>
+			<div class="box_list">
+				<h3><a href='/listings/<%= booking.listing.id %>'><%= booking.listing.name %></a></h3>
+				<br>
+				Requested by: <%= booking.user.name %>
 				<br>
 				Requested from: <%= booking.book_from %>
 				<br>
 				Requested until: <%= booking.book_to %>
 				<br>
 				<% if booking.status == "accepted" %>
-				Booking has been accepted.
+					Booking has been accepted.
 				<% elsif booking.status == "rejected" %>
-				Booking has been rejected.
+					Booking has been rejected.
 				<% elsif booking.status == "pending" %>
-				<form action="/requests/<%= booking.id %>/confirm" method="post">
-					<input type="submit" value="Confirm">
-				</form>
-				<form action="/requests/<%= booking.id %>/deny" method="post">
-					<input type="submit" value="Deny">
-				</form>
+					<form action="/requests/<%= booking.id %>/confirm" method="post">
+						<input type="submit" value="Confirm">
+					</form>
+					<form action="/requests/<%= booking.id %>/deny" method="post">
+						<input type="submit" value="Deny">
+					</form>
 				<% end %>
-			</li>
+			</div>
 		<% end %>
 	</ul>
 
