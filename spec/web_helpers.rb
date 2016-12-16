@@ -44,7 +44,7 @@ module WebHelpers
                       available_from:  "2016-01-01",
                       available_until: "2016-02-01" )
     visit "/listings"
-    click_button "create listing"
+    click_button "Create Listing"
     fill_in :name, with: name
     fill_in :description, with: description
     fill_in :price, with: price

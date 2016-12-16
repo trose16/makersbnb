@@ -23,8 +23,14 @@
     <input class="button" type="submit" id="submit" value="Sign Up">
 </form>
 
+<<<<<<< HEAD
 <% if flash[:incorrect_password]%>
   <%= flash[:incorrect_password]%>
   <% end %>
+=======
+<% if flash[:sign_up_error] %>
+  <%= flash[:sign_up_error] %>
+<% end %>
+>>>>>>> e5293fe9062cbcf7ac62c1a1a36974395784ea86
 
 </body>

@@ -11,5 +11,9 @@
       <input class="button" type="submit" id="log-in" value="Log In">
     </form>
 
+    <% if flash[:log_in_error] %>
+      <%= flash[:log_in_error] %>
+    <% end %>
+
   </body>
 </html>

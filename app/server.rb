@@ -11,4 +11,8 @@ class MakersBnb < Sinatra::Base
 
 	include Helpers
 
+	get '/' do
+		redirect '/users/new'
+	end
+
 end
