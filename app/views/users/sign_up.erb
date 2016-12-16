@@ -23,5 +23,8 @@
     <input class="button" type="submit" id="submit" value="Sign Up">
 </form>
 
+<% if flash[:sign_up_error] %>
+  <%= flash[:sign_up_error] %>
+<% end %>
 
 </body>
