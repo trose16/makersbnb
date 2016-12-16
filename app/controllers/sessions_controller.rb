@@ -10,6 +10,7 @@ class MakersBnb < Sinatra::Base
       session[:user_id] = user.id
       redirect '/listings'
     else
+      flash.keep[:log_in_error] = "Oops! Something went wrong. Please try again."
       redirect '/sessions/new'
     end
   end
