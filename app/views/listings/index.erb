@@ -12,6 +12,7 @@
 	<form class="main-form" action="/listings/sort" method="post">
 		<input type="date" name="available_from" placeholder="Available From* DD/MM/YYYY"><br>
 		<input type="date" name="available_until" placeholder="Available To* DD/MM/YYYY"><br>
+
 		<input class="button" type="submit" value="Show Available Property">
 	</form>
 
@@ -20,13 +21,23 @@
 		<% if @sort_date %>
 				<% @listings.each do |listing| %>
 					<% if ( @sort_date - listing.date_availability).empty? %>
-						<li><a href='/listings/<%= listing.id %>'><%= listing.name %></a></li>
+						<div class="box_list">
+							<a href='/listings/<%= listing.id %>'><%= listing.name %></a>
+							<br>
+							<%= listing.description %>
+							</div>
+							<br>
 					<%end%>
 				<% end %>
 				<% session[:available_date] = nil %>
 		<% else %>
 				<% @listings.each do |listing| %>
-					<li><a href='/listings/<%= listing.id %>'><%= listing.name %></a></li>
+					<div class="box_list">
+						<a href='/listings/<%= listing.id %>'><%= listing.name %></a>
+							<br>
+							<%= listing.description[0..70] %>...
+							</div>
+							<br>
 				<% end %>
 		<% end %>
 	</ul>
@@ -40,7 +51,6 @@
 	<% if flash[:notice] %>
 		<%= flash[:notice] %>
 	<% end %>
-
-
+  
 </body>
 </html>

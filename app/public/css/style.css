@@ -36,13 +36,6 @@ ul.listings {
   list-style-type: none;
 }
 
-ul.listings {
-  float: left;
-  width: 150px;
-  height: 75px;
-  margin: 10px;
-}
-
 li.listings {
   width: 300px;
   margin: 10px auto 10px auto;
@@ -140,4 +133,26 @@ input.log-in-btn {
   font-size: 22px;
   border: none;
   width: 100px; height: 30px;
+
+div.box_list {
+  width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(255,255, 255, .15);
+  color: #ffffff;
+  font-size: 18px;
 }
+
+div.listing_box_list {
+  width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(255,255, 255, .15);
+  color: #ffffff;
+  font-size: 18px;
+}
+
+a:link{ color: #fff; text-decoration:none }
+a:visited{ color: #fff; text-decoration:none }
+a:hover{ color: #fff; text-decoration:none }
+a:active{ color: #fff; text-decoration:none }
