@@ -12,10 +12,10 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 				expect(page.status_code).to eq 200
 			end
 
-			scenario 'user can see creat listing button' do
+			scenario 'user can see create listing button' do
 				sign_up_owner
 				log_in_owner
-				expect(page).to have_button("create listing")
+				expect(page).to have_button("Create Listing")
 			end
 	end
 
