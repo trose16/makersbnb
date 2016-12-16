@@ -41,6 +41,17 @@ include WebHelpers
       expect(page).to have_content("Sorry, the dates are not available.")
     end
 
+    scenario "user cannot request their own properties" do
+      sign_up_owner
+      log_in_owner
+      create_listing
+      click_link('Peacock Paradise Private Villa')
+      fill_in "book_from", with: "2016-01-03"
+      fill_in "book_to", with: "2016-01-07"
+      click_button 'Request'
+      expect(page).to have_content("You cannot book a property you own.")  
+    end
+
   end
 
   describe "when not logged in" do
