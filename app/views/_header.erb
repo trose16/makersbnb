@@ -5,14 +5,19 @@
 
   <nav>
     <ul>
-      <li> <a href="/listings">Home</a></li>
-      <li> <a href="/users/new">Sign up</a></li>
+      <li> <a href="/users/requests">My Account</a></li>
       <li> <a href="/listings/new">List a property</a></li>
       <li> <a href="/listings">See rentals</a></li>
+
+      <%if !current_user%>
+        <li style="float:right"><a href="/sessions/new">Log in</a></li>
+        <li style="float:right"><a href="/users/new">Sign up</a></li>
+      <%end%>
+
     </ul>
   </nav>
 
-  <div class="parallax"></div>
+  <div class="parallax">
 
   <%if !current_user%>
     <form action="/sessions/new" method="get">
@@ -26,5 +31,7 @@
         <input type='submit' value='log out'>
     </form>
   <%end%>
+
+</div>
 
 </body>
