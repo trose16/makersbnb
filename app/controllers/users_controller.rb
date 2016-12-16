@@ -10,7 +10,8 @@ class MakersBnb < Sinatra::Base
 
   post "/users" do
     User.create(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirm] )
-    redirect '/listings'
+    redirect '/sessions/new'
+    end
   end
 
   get "/users/requests" do
