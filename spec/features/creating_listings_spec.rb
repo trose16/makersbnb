@@ -27,7 +27,7 @@ RSpec.feature 'Creating a Listing', :type => :feature do
 
 			scenario 'user cannot see creat listing button' do
 				visit '/listings'
-				expect(page).not_to have_button("create listing")
+				expect(page).not_to have_button("Create Listing")
 			end
 	end
 
