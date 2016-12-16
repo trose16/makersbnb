@@ -32,10 +32,6 @@ nav li a:hover {
   font-size: 25px;
 }
 
-/*ul.listings {
-  list-style-type: none;
-}*/
-
 ul.listings {
   float: left;
   width: 150px;
