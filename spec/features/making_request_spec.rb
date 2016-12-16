@@ -22,8 +22,23 @@ include WebHelpers
       expect(page).to have_selector(:link_or_button, 'Request')
     end
 
-    scenario "Saves requests to the database" do
+    scenario "Saves requests to the database when the listing is available" do
       expect{make_request}.to change{Booking.count}.by(1)
+    end
+
+    scenario "does not save requests to the database when the listing is unavailable" do
+      expect{make_unavailable_request}.to change{Booking.count}.by(0)
+    end
+
+    scenario "does not save requests to the database after someone has booked the dates already" do
+      make_request
+      log_out
+      log_in_owner
+      visit "/users/requests"
+      click_button "Confirm"
+      log_out
+      expect{make_second_request}.to change{Booking.count}.by(0)
+      expect(page).to have_content("Sorry, the dates are not available.")
     end
 
   end

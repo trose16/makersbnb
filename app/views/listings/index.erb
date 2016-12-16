@@ -8,13 +8,26 @@
 		<h1>	Welcome, <%= current_user.name %>!</h1><br>
 	<%end%>
 
-		<br>
+	<form action="/listings/sort" method="post">
+		Available from:
+		<input type="date" name="available_from" placeholder="DD/MM/YYYY">
+		Available until:
+		<input type="date" name="available_until" placeholder="DD/MM/YYYY">
+		<input type="submit" value="Show Available Property">
+	</form>
 
-	<ul class="listings" id='listings'>
-		<% @listings.each do |listing| %>
-			<li class="listings">
-				<a href='/listings/<%= listing.id %>'><%= listing.name %></a>
-			</li>
+	<ul id='listings'>
+		<% if @sort_date %>
+				<% @listings.each do |listing| %>
+					<% if ( @sort_date - listing.date_availability).empty? %>
+						<li><a href='/listings/<%= listing.id %>'><%= listing.name %></a></li>
+					<%end%>
+				<% end %>
+				<% session[:available_date] = nil %>
+		<% else %>
+				<% @listings.each do |listing| %>
+					<li><a href='/listings/<%= listing.id %>'><%= listing.name %></a></li>
+				<% end %>
 		<% end %>
 	</ul>
 

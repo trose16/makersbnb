@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
+require 'date'
 
 class Listing
 
@@ -13,8 +14,24 @@ class Listing
 	property :available_until, String
 	property :country, String, required: true
 	property :city, String, required: true
+	property :date_availability, Object
 
 	belongs_to :user
 	has n, :bookings
+
+	def set_date_availability
+		date_from = Date.parse(self.available_from)
+		date_to = Date.parse(self.available_until)
+		self.date_availability = (date_from..date_to).map(&:to_s)
+	end
+
+	def check_availability(from, to)
+		request_date = (from..to).map(&:to_s)
+		(request_date - self.date_availability).empty?
+	end
+
+	def update_availability(booking_date)
+		self.date_availability - booking_date
+	end
 
 end

@@ -2,22 +2,24 @@
 
 <html>
 <body>
-
-
 	<h2>Listing information</h2>
 
-    <div class="listing-descriptions">
-			<h3><%= @listing.name %></h3><br>
-    	<%= @listing.description %><br>
-    	<%= @listing.price %><br>
-			<%= @listing.city %><br>
-			<%= @listing.country %><br>
-		</div>
+   <div class="listing-descriptions">
+      <h3><%= @listing.name %></h3><br>
+       <%= @listing.description %><br>
+       <%= @listing.price %><br>
+		   <%= @listing.city %><br>
+		   <%= @listing.country %><br>
+   </div>
+		Available from:
+		<%= @listing.available_from %><br>
+		To:
+		<%= @listing.available_until %><br>
 
 		<%if current_user%>
 			<form class="main-form" action= "/listings/<%= @listing.id %>/request" method="post">
-				<input type="date" name="book_from" placeholder="Booking From* DD/MM/YYYY"></br>
-				<input type="date" name="book_to" placeholder="To* DD/MM/YYYY"></br>
+				<input type="date" name="book_from" placeholder="Booking From* DD/MM/YYYY" min="<%= @listing.available_from %>" max="<%= @listing.available_until %>"></br>
+				<input type="date" name="book_to" placeholder="To* DD/MM/YYYY" min="<%= @listing.available_from %>" max="<%= @listing.available_until %>"><br>
 				<input class="button" type="submit" value="Request">
 			</form>
 		<%end%>
