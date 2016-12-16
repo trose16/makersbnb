@@ -7,7 +7,11 @@
 	<ul id='renter_bookings'>
 		<% @renter_bookings.each do |booking| %>
 			<li>
-				<%= booking.listing.name %>
+				<a href='/listings/<%= booking.listing.id %>'><%= booking.listing.name %></a>
+				<br>
+				Requested from: <%= booking.book_from %>
+				<br>
+				Requested until: <%= booking.book_to %>
 			</li>
 		<% end %>
 	</ul>
@@ -18,6 +22,10 @@
 		<% @owner_bookings.each do |booking| %>
 			<li>
 				<%= booking.listing.name %>, Requested by: <%= booking.user.name %>
+				<br>
+				Requested from: <%= booking.book_from %>
+				<br>
+				Requested until: <%= booking.book_to %>
 				<br>
 				<% if booking.status == "accepted" %>
 				Booking has been accepted.
